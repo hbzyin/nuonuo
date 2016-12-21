@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Jay Sky</title>
+  <link rel="stylesheet" href="css/c12-basic.css"/>
+
+</head>
+
+<body>
+  <header>
+    <image src="imgs/0.jpg" alt="图片加载中..." id="img0"/>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="c12-about.html">About</a></li>
+      <li><a href="c12-photos.html">Photos</a></li>
+      <li><a href="c12-live.html">Live</a></li>
+      <li><a href="c12-contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <article>
+    <p>Photos of the me !</p>
+    <ul id="imgsgallery">
+      <li>
+        <a href="imgs/IMG_021.JPG" title="Eating">
+          <img src="imgs/img_021.png" alt="the artist"/>
+        </a>
+      </li>
+      <li>
+        <a href="imgs/IMG_022.JPG" title="Say hi to me !">
+          <img src="imgs/img_022.png" alt="the audience"/>
+        </a>
+      </li>
+      <li>
+        <a href="imgs/IMG_023.JPG" title="Enjoy the life !">
+          <img src="imgs/img_023.png" alt="the audience"/>
+        </a>
+      </li>
+      <li>
+        <a href="imgs/IMG_024.JPG" title="Experience of tech !">
+          <img src="imgs/img_024.png" alt="the audience"/>
+        </a>
+      </li>
+      <li>
+        <a href="imgs/IMG_025.JPG" title="Imagine me fly !">
+          <img src="imgs/img_025.png" alt="the audience"/>
+        </a>
+      </li>
+
+    </ul>
+    <h1 class="desc">Here is the preview of the pics !</h1>
+  </article>
+</header>
+<script src="js/c12-global.js"></script>
+<script src="js/c4.js"></script>
+<script>
+  function createBoxHolder() {
+    if (!document.getElementsByTagName)return false;
+    if (!document.getElementsByTagName("a"))return false;
+    if (!document.createElement)return false;
+    if (!document.createTextNode)return false;
+    var fa = document.getElementById("imgsgallery")
+    var links = fa.getElementsByTagName("a");
+    var box = document.createElement("div");
+    var img=document.createElement("img");
+    img.setAttribute("id", "picbox");
+    img.setAttribute("alt", "Picture onloading...");
+    img.setAttribute("src","imgs/IMG_001.JPG");
+    var desc = document.createTextNode("Choose a picture!")
+    box.appendChild(desc);
+    box.appendChild(img);
+    document.getElementsByTagName("article")[0].appendChild(box);
+
+  }
+  function preLinks(){
+    if(!document.getElementById)return false;
+    if(!document.getElementsByTagName)return false
+    if(!document.getElementById("imgsgallery"))return false;
+    var fa=document.getElementById("imgsgallery");
+    var links=fa.getElementsByTagName("a");
+    for(var i=0;i<links.length;i++){
+      links[i].onclick=function(e){e.preventDefault()}
+      links[i].onmouseover=function(e){
+        return showpic(this);
+      }
+    }
+  }
+  function showpic(which){
+    if(!document.getElementById("picbox"))return false;
+    var src=which.getAttribute("href");
+    var img=document.getElementById("picbox");
+    img.setAttribute("src",src);
+    if(!document.getElementById("desc"))return false;
+    if(which.getAttribute("title")){
+      var text=which.getAttribute("title");
+    }else{var text=""}
+    var desc=document.getElementById("desc");
+    if(desc.firstChild.nodeType==3){
+      desc.firstChild.nodeValue=text;
+    }return false;
+  }
+
+    createBoxHolder();
+    preLinks();
+
+</script>
+</body>
+</html>

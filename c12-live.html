@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>诺诺的话</title>
+  <link rel="stylesheet" href="css/c12-basic.css"/>
+
+</head>
+
+<body>
+<header>
+  <image src="imgs/0.jpg" alt="图片加载中..." id="img0"/>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="c12-about.html">About</a></li>
+      <li><a href="c12-photos.html">Photos</a></li>
+      <li><a href="c12-live.html">Live</a></li>
+      <li><a href="c12-contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <article>
+    <p>Actives on the way !</p>
+    <table summary="when and where you can jion us !">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>City</th>
+          <th>Descriptions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2011.09-2015.06</td>
+          <td>WuHan, <abbr title="Hubei University Of Education">HUOE</abbr></td>
+          <td>Study as an Udergraduate</td>
+        </tr>
+        <tr style="color:#a4f">
+          <td>2015.07-2015.10</td>
+          <td>WuHan, <abbr title="Sheng cai">Sheng cai</abbr></td>
+          <td>Working as a service</td>
+        </tr>
+        <tr>
+          <td>2015.10-2015.12</td>
+          <td>WuHan, <abbr title="Prepare for the postgraduate">STUDY</abbr></td>
+          <td>Fighting fot the future</td>
+        </tr>
+        <tr>
+          <td>2016.09--....</td>
+          <td>Heilongjiang, <abbr title="Heilongjiang University">HLJU</abbr></td>
+          <td>Study as an Postgraduate</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Wonderful to be continue.......</p>
+  </article>
+</header>
+<script src="js/c12-global.js"></script>
+<script>
+  function addClass(ele,classname){
+    var oldclass=ele.getAttribute("class");
+    if(oldclass==""){
+      ele.setAttribute("class",classname);
+    }else{
+      ele.setAttribute("class",oldclass+" "+classname);
+    }
+  }
+  function stripeTables(){
+    if(!document.getElementsByTagName)return false;
+    var tables=document.getElementsByTagName("table");
+    for(var i=0;i<tables.length;i++){
+      var odd=false;
+      var rows=tables[i].getElementsByTagName("tr");
+      for(var j=0;j<rows.length;j++){
+        if(odd==true){addClass(rows[j],"odd")
+        odd=false;
+        }else{odd=true;
+        }
+      }
+    }
+  }
+  function hilightRow(){
+    if(!document.getElementsByTagName)return false;
+    var rows=document.getElementsByTagName("tr");
+    for(var i=0;i<rows.length;i++){
+      rows[i].oldClassName=rows[i].className;
+      rows[i].onmouseover=function(){
+        addClass(this,"highlight");
+      }
+      rows[i].onmouseout=function(){
+        this.className=this.oldClassName;
+      }
+    }
+  }
+  stripeTables();
+  hilightRow();
+
+</script>
+</body>
+</html>

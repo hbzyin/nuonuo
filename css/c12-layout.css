@@ -1,0 +1,32 @@
+section,nav,header,article{display:block;margin:0;padding:0;}
+body{margin:1em 15%;max-width:80em;}
+#img0{background:url(../imgs/2.jpg);border:0.1em transparent;width:100%;height:25em;}
+header nav{padding-left:10%;border-width:0;}
+header nav ul{width:100%;overflow:hidden;border-left:0.1em solid;margin:0px;height:3em;}
+header nav li{display:inline;}
+header nav li a {display:block;float:left;padding:0.15em 0.5em; ;border-right:0.1em solid;font-size: 2em;}
+article{border:0.1em solid;border-top-width:0;padding:2em 10%;line-height:1.8em;}
+article img{border:0.1em solid;outline-width:0.1em;}
+
+#about header{background:url(../imgs/back-img1.jpg);}
+#photos header{background:url(../imgs/back-img1.jpg);}
+#live header{background:url(../imgs/back-img1.jpg);}
+#contact header{background:url(../imgs/back-img1.jpg);}
+
+
+#videobox{margin:0 auto;width:100%; position:relative;overflow:hidden;border:2px solid transparent;}
+#preview{width:800px;}
+
+/*photos page*/
+#imgsgallery  li{display:inline;margin-right:10px;}
+#picbox{margin:0 auto;width:430px;min-height:420px;background:#aaa;display:block;}
+
+/*live*/
+td{padding:0.5em 4em;}
+th{color:#edc;background-color:#445;}
+tr td{color:#223;background:#eb6;}
+/*contact*/
+label{display:block}
+fieldset{border:0}
+
+.otherlinks>li{float:left;height:30px;line-height:30px;margin-left:80px;list-style:none;}

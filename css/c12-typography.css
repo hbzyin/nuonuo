@@ -1,0 +1,9 @@
+body{font-size:76%;font-family:"helvetica","Arial"}
+body *{font-size:1em;}
+a{font-weight:bold;text-decoration:none;}
+header nav{font-family:"lucida grande","helvetica"}
+article{line-height:1.8em;}
+article p{margin:1em 0;line-height:2em;font-size: 20px;}
+h1{font-family:"georgia";font:1.4em;margin-top:1em;}
+#imges{list-style-type:none;}
+textarea{font-family:"helvetica"}
